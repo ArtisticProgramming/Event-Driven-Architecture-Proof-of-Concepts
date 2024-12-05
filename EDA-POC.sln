@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoubleWriting", "DoubleWriting", "{1AC6DA81-0642-4DB5-BDD3-E938C0C380FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Producer", "DoubleWritingApp.Producer\DoubleWritingApp.Producer.csproj", "{BF7C66DD-4E67-4FED-9D8D-DB1EEB08B241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Producer", "src\DoubleWritingApp.Producer\DoubleWritingApp.Producer.csproj", "{BF7C66DD-4E67-4FED-9D8D-DB1EEB08B241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Consumer1", "DoubleWritingApp.Consumer1\DoubleWritingApp.Consumer1.csproj", "{DD8B6E02-8C05-47FF-9FB6-9BA78867EC45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Consumer1", "src\DoubleWritingApp.Consumer1\DoubleWritingApp.Consumer1.csproj", "{DD8B6E02-8C05-47FF-9FB6-9BA78867EC45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
