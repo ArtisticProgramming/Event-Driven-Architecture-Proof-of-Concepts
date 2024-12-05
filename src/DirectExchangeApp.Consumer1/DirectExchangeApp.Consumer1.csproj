@@ -11,4 +11,7 @@
 		<PackageReference Include="MassTransit.RabbitMQ" Version="8.3.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj" />
+	</ItemGroup>
 </Project>
