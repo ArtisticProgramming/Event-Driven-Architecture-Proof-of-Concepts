@@ -8,8 +8,8 @@ namespace DirectExchangeApp.Producer
     {
         public Task Consume(ConsumeContext<UserRegisteredEvent> context)
         {
-            var message = context.Message;
-            Console.WriteLine("Received message: {0}", message.LastName);
+            Utility.PrintMessagePayloadWithHeaders(context);
+
             return Task.CompletedTask;
         }
     }

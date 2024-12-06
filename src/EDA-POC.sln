@@ -28,12 +28,27 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fanout", "Fanout", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
+	ProjectSection(SolutionItems) = preProject
+		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
+		Readme.txt = Readme.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Consumer1", "DirectExchangeApp.Consumer1\DirectExchangeApp.Consumer1.csproj", "{56381244-F7FC-4E19-BCC2-59ED6189306C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQExchanges.BuildingBlocks", "RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj", "{1BC2A5E6-A84A-4675-999F-905BE54A9F60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "negatively-acknowledged", "{E1D569EF-6D26-478B-8A16-D05EB0C996FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
+	ProjectSection(SolutionItems) = preProject
+		UtilityCommands.txt = UtilityCommands.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Producer", "DeadLetterNegativelyAcknowledgedApp.Producer\DeadLetterNegativelyAcknowledgedApp.Producer.csproj", "{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Consumer1", "DeadLetterNegativelyAcknowledgedApp.Consumer1\DeadLetterNegativelyAcknowledgedApp.Consumer1.csproj", "{28D258DE-3F4A-49C5-83DA-819322404991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +76,14 @@ Global
 		{1BC2A5E6-A84A-4675-999F-905BE54A9F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC2A5E6-A84A-4675-999F-905BE54A9F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC2A5E6-A84A-4675-999F-905BE54A9F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D258DE-3F4A-49C5-83DA-819322404991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D258DE-3F4A-49C5-83DA-819322404991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D258DE-3F4A-49C5-83DA-819322404991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D258DE-3F4A-49C5-83DA-819322404991}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +100,9 @@ Global
 		{8099C607-E92E-4F0C-91DB-8D6E9381D438} = {D3063848-42AE-4D95-BDF0-1D95F672C0F1}
 		{56381244-F7FC-4E19-BCC2-59ED6189306C} = {D3063848-42AE-4D95-BDF0-1D95F672C0F1}
 		{1BC2A5E6-A84A-4675-999F-905BE54A9F60} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
+		{E1D569EF-6D26-478B-8A16-D05EB0C996FC} = {6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}
+		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC} = {E1D569EF-6D26-478B-8A16-D05EB0C996FC}
+		{28D258DE-3F4A-49C5-83DA-819322404991} = {E1D569EF-6D26-478B-8A16-D05EB0C996FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}
