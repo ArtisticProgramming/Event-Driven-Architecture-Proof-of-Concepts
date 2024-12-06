@@ -1,3 +1,4 @@
-$projectName = "DeadLetterNegativelyAcknowledgedApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "DeadLetterTTLExpirationApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "DeadLetterTTLExpirationApp.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 
 

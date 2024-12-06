@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", "{879CD2DA-3F9A-4570-860F-B29F4A60BA06}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventVersioning", "EventVersioning", "{879CD2DA-3F9A-4570-860F-B29F4A60BA06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoubleWriting", "DoubleWriting", "{1AC6DA81-0642-4DB5-BDD3-E938C0C380FA}"
 	ProjectSection(SolutionItems) = preProject
@@ -30,6 +30,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
 	ProjectSection(SolutionItems) = preProject
 		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
+		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
 		Readme.txt = Readme.txt
 	EndProjectSection
 EndProject
@@ -41,7 +42,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQExchanges.BuildingB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "negatively-acknowledged", "{E1D569EF-6D26-478B-8A16-D05EB0C996FC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
 	ProjectSection(SolutionItems) = preProject
 		UtilityCommands.txt = UtilityCommands.txt
 	EndProjectSection
@@ -49,6 +50,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Producer", "DeadLetterNegativelyAcknowledgedApp.Producer\DeadLetterNegativelyAcknowledgedApp.Producer.csproj", "{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Consumer1", "DeadLetterNegativelyAcknowledgedApp.Consumer1\DeadLetterNegativelyAcknowledgedApp.Consumer1.csproj", "{28D258DE-3F4A-49C5-83DA-819322404991}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TTL-Expiration", "TTL-Expiration", "{337B94A3-8EF6-4DAA-8DC6-119A9CA55753}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Producer", "DeadLetterTTLExpirationApp.Producer\DeadLetterTTLExpirationApp.Producer.csproj", "{23ADAECD-E637-4405-9ADD-5162047A636F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Consumer1", "DeadLetterTTLExpirationApp.Consumer1\DeadLetterTTLExpirationApp.Consumer1.csproj", "{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +91,14 @@ Global
 		{28D258DE-3F4A-49C5-83DA-819322404991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28D258DE-3F4A-49C5-83DA-819322404991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28D258DE-3F4A-49C5-83DA-819322404991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23ADAECD-E637-4405-9ADD-5162047A636F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23ADAECD-E637-4405-9ADD-5162047A636F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23ADAECD-E637-4405-9ADD-5162047A636F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23ADAECD-E637-4405-9ADD-5162047A636F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +118,9 @@ Global
 		{E1D569EF-6D26-478B-8A16-D05EB0C996FC} = {6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}
 		{A7CF90BB-B9F6-45F0-BF7C-00D944154CCC} = {E1D569EF-6D26-478B-8A16-D05EB0C996FC}
 		{28D258DE-3F4A-49C5-83DA-819322404991} = {E1D569EF-6D26-478B-8A16-D05EB0C996FC}
+		{337B94A3-8EF6-4DAA-8DC6-119A9CA55753} = {6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}
+		{23ADAECD-E637-4405-9ADD-5162047A636F} = {337B94A3-8EF6-4DAA-8DC6-119A9CA55753}
+		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D} = {337B94A3-8EF6-4DAA-8DC6-119A9CA55753}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}
