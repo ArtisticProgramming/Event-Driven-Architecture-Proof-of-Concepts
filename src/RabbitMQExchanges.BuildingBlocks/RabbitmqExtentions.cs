@@ -7,6 +7,8 @@ namespace RabbitMQExchanges.BuildingBlocks
     {
         public static void BuildDefulatHost(this IRabbitMqBusFactoryConfigurator cfg)
         {
+            Console.WriteLine("Connecting to RabbitMq...");
+
             cfg.Host("localhost", "/", h =>
             {
                 h.Username("guest");

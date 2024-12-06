@@ -8,6 +8,8 @@ namespace DirectExchangeApp.Producer
     {
         static async Task Main(string[] args)
         {
+            Console.WriteLine("This is just a Direct Exchange sample app. [Producer]");
+
             var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
                 cfg.BuildDefulatHost();
@@ -40,6 +42,10 @@ namespace DirectExchangeApp.Producer
 
                     Console.ReadKey();
                 }
+            }
+            catch (Exception ex) 
+            { 
+                Console.WriteLine($"Error connecting to RabbitMQ: {ex.Message}"); 
             }
             finally
             {

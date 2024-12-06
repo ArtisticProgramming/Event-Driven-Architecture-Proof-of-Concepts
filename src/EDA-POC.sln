@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", "{879CD2DA-3F9A-4570-860F-B29F4A60BA06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoubleWriting", "DoubleWriting", "{1AC6DA81-0642-4DB5-BDD3-E938C0C380FA}"
+	ProjectSection(SolutionItems) = preProject
+		DoubleWritingAppExe.ps1 = DoubleWritingAppExe.ps1
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Producer", "DoubleWritingApp.Producer\DoubleWritingApp.Producer.csproj", "{BF7C66DD-4E67-4FED-9D8D-DB1EEB08B241}"
 EndProject
@@ -14,6 +17,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ-Exchanges", "RabbitMQ-Exchanges", "{BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct", "Direct", "{D3063848-42AE-4D95-BDF0-1D95F672C0F1}"
+	ProjectSection(SolutionItems) = preProject
+		DirectExchangeAppExe.ps1 = DirectExchangeAppExe.ps1
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topic", "Topic", "{F48EC245-1123-492D-B7F0-88EAF4B60A6C}"
 EndProject
@@ -27,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Consumer1", "DirectExchangeApp.Consumer1\DirectExchangeApp.Consumer1.csproj", "{56381244-F7FC-4E19-BCC2-59ED6189306C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQExchanges.BuildingBlocks", "RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj", "{1BC2A5E6-A84A-4675-999F-905BE54A9F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQExchanges.BuildingBlocks", "RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj", "{1BC2A5E6-A84A-4675-999F-905BE54A9F60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
