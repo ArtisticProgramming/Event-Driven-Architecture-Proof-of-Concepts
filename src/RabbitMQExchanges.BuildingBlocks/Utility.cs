@@ -38,5 +38,7 @@ namespace RabbitMQExchanges.BuildingBlocks
             Console.WriteLine(messageJson);
             Console.WriteLine("---------------------------------------------------------");
         }
+
+       
     }
 }

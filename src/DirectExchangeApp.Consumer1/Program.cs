@@ -22,7 +22,6 @@ namespace DirectExchangeApp.Producer
 
             var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
-
                 cfg.BuildDefulatHost();
 
                 cfg.ReceiveEndpoint("direct_exchange_queue", e =>
@@ -42,7 +41,8 @@ namespace DirectExchangeApp.Producer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error connecting to RabbitMQ: {ex.Message}");
+                Console.WriteLine($"Error: {ex.Message}");
+                await Task.Run(() => Console.ReadKey());
             }
             finally
             {
