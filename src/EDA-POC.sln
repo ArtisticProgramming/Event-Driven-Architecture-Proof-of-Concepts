@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventVersioning", "EventVersioning", "{879CD2DA-3F9A-4570-860F-B29F4A60BA06}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", "{879CD2DA-3F9A-4570-860F-B29F4A60BA06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoubleWriting", "DoubleWriting", "{1AC6DA81-0642-4DB5-BDD3-E938C0C380FA}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", 
 	ProjectSection(SolutionItems) = preProject
 		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
 		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
-		Readme.txt = Readme.txt
+		DeadLetterReadme.txt = DeadLetterReadme.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
@@ -56,6 +56,22 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Producer", "DeadLetterTTLExpirationApp.Producer\DeadLetterTTLExpirationApp.Producer.csproj", "{23ADAECD-E637-4405-9ADD-5162047A636F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Consumer1", "DeadLetterTTLExpirationApp.Consumer1\DeadLetterTTLExpirationApp.Consumer1.csproj", "{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer1", "CompetingConsumers.Consumer1\CompetingConsumers.Consumer1.csproj", "{D3C6F91E-F455-497B-82B6-275B0D307F25}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer2", "CompetingConsumers.Consumer2\CompetingConsumers.Consumer2.csproj", "{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer3", "CompetingConsumers.Consumer3\CompetingConsumers.Consumer3.csproj", "{12B5B4C1-0F38-47AA-9B74-AF8499099E78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Producer", "CompetingConsumers.Producer\CompetingConsumers.Producer.csproj", "{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompetingConsumers", "CompetingConsumers", "{853FA7E4-C287-4479-9C18-5C63691CAD58}"
+	ProjectSection(SolutionItems) = preProject
+		CompetingConsumersExe.ps1 = CompetingConsumersExe.ps1
+		CompetingConsumers_Readme.txt = CompetingConsumers_Readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{123C5143-A147-46CD-A044-5A8544B6C2C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +115,22 @@ Global
 		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3C6F91E-F455-497B-82B6-275B0D307F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C6F91E-F455-497B-82B6-275B0D307F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C6F91E-F455-497B-82B6-275B0D307F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C6F91E-F455-497B-82B6-275B0D307F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,7 +143,6 @@ Global
 		{F48EC245-1123-492D-B7F0-88EAF4B60A6C} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
 		{89C74D85-F999-4F36-BF54-34FDFA282E36} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
 		{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
-		{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
 		{8099C607-E92E-4F0C-91DB-8D6E9381D438} = {D3063848-42AE-4D95-BDF0-1D95F672C0F1}
 		{56381244-F7FC-4E19-BCC2-59ED6189306C} = {D3063848-42AE-4D95-BDF0-1D95F672C0F1}
 		{1BC2A5E6-A84A-4675-999F-905BE54A9F60} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
@@ -121,6 +152,11 @@ Global
 		{337B94A3-8EF6-4DAA-8DC6-119A9CA55753} = {6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}
 		{23ADAECD-E637-4405-9ADD-5162047A636F} = {337B94A3-8EF6-4DAA-8DC6-119A9CA55753}
 		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D} = {337B94A3-8EF6-4DAA-8DC6-119A9CA55753}
+		{D3C6F91E-F455-497B-82B6-275B0D307F25} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
+		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
+		{12B5B4C1-0F38-47AA-9B74-AF8499099E78} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
+		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
+		{853FA7E4-C287-4479-9C18-5C63691CAD58} = {123C5143-A147-46CD-A044-5A8544B6C2C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}

@@ -8,6 +8,7 @@ class Consumer
 {
     static void Main()
     {
+        Console.WriteLine("App is running...");
         var factory = new ConnectionFactory() { HostName = "localhost" };
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())
@@ -34,8 +35,7 @@ class Consumer
 
             channel.BasicConsume(queue: "main_queue_ttl", autoAck: false, consumer: consumer);
             channel.BasicConsume(queue: "dead_letter_queue", autoAck: false, consumer: deadLetterConsumer);
-
-            Console.WriteLine(" Press [enter] to exit.");
+ 
             Console.ReadLine();
         }
     }
@@ -44,7 +44,7 @@ class Consumer
     {
         consumer.Received += (model, ea) =>
         {
-            System.Threading.Thread.Sleep(10000);
+            System.Threading.Thread.Sleep(3000);
 
             var body = ea.Body.ToArray();
             var message = Encoding.UTF8.GetString(body);
@@ -54,7 +54,7 @@ class Consumer
             Console.WriteLine(" [x] Message processed: {0}", message);
             channel.BasicAck(ea.DeliveryTag, false);
         };
-    }
+    } 
 
     private static void DeadLetterConsumer(IModel channel, EventingBasicConsumer deadLetterConsumer)
     {
