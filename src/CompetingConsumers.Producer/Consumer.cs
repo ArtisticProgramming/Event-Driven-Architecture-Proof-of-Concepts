@@ -14,12 +14,16 @@ class Producer
          
             channel.ExchangeDeclare(exchange: "direct_exchange", type: ExchangeType.Direct);
 
-
             while (true)
             {
-                var message = $"Hello World! {DateTime.Now.ToLongTimeString()} | {Guid.NewGuid()}";
+                var message = $"Hello! {DateTime.Now.ToLongTimeString()} | {Guid.NewGuid()}";
                 var body = Encoding.UTF8.GetBytes(message);
-                channel.BasicPublish(exchange: "direct_exchange", routingKey: "computation", basicProperties: null, body: body);
+
+                channel.BasicPublish(exchange: "direct_exchange", 
+                                     routingKey: "computation", 
+                                     basicProperties: null, 
+                                     body: body);
+
                 Console.WriteLine(" [x] Sent {0}", message);
 
                 Console.ReadLine();

@@ -17,6 +17,6 @@ before receiving the next one.
 global: false: Apply this setting to individual consumers rather than the whole channel.
 
 example: 
-> channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+C#: channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
 
 ----------------------------------------------------------------------------------------

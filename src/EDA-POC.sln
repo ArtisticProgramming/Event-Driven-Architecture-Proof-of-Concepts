@@ -41,6 +41,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQExchanges.BuildingBlocks", "RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj", "{1BC2A5E6-A84A-4675-999F-905BE54A9F60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "negatively-acknowledged", "{E1D569EF-6D26-478B-8A16-D05EB0C996FC}"
+	ProjectSection(SolutionItems) = preProject
+		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
 	ProjectSection(SolutionItems) = preProject
@@ -52,6 +55,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Consumer1", "DeadLetterNegativelyAcknowledgedApp.Consumer1\DeadLetterNegativelyAcknowledgedApp.Consumer1.csproj", "{28D258DE-3F4A-49C5-83DA-819322404991}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimeToLive[TTL]-Expiration", "TimeToLive[TTL]-Expiration", "{337B94A3-8EF6-4DAA-8DC6-119A9CA55753}"
+	ProjectSection(SolutionItems) = preProject
+		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Producer", "DeadLetterTTLExpirationApp.Producer\DeadLetterTTLExpirationApp.Producer.csproj", "{23ADAECD-E637-4405-9ADD-5162047A636F}"
 EndProject
