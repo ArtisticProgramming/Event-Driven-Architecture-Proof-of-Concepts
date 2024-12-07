@@ -30,8 +30,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
 	ProjectSection(SolutionItems) = preProject
 		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
-		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
 		DeadLetterReadme.txt = DeadLetterReadme.txt
+		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterNegativelyAcknowledgedApp.Consumer1", "DeadLetterNegativelyAcknowledgedApp.Consumer1\DeadLetterNegativelyAcknowledgedApp.Consumer1.csproj", "{28D258DE-3F4A-49C5-83DA-819322404991}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TTL-Expiration", "TTL-Expiration", "{337B94A3-8EF6-4DAA-8DC6-119A9CA55753}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimeToLive[TTL]-Expiration", "TimeToLive[TTL]-Expiration", "{337B94A3-8EF6-4DAA-8DC6-119A9CA55753}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadLetterTTLExpirationApp.Producer", "DeadLetterTTLExpirationApp.Producer\DeadLetterTTLExpirationApp.Producer.csproj", "{23ADAECD-E637-4405-9ADD-5162047A636F}"
 EndProject
@@ -61,14 +61,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer2", "CompetingConsumers.Consumer2\CompetingConsumers.Consumer2.csproj", "{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Consumer3", "CompetingConsumers.Consumer3\CompetingConsumers.Consumer3.csproj", "{12B5B4C1-0F38-47AA-9B74-AF8499099E78}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompetingConsumers.Producer", "CompetingConsumers.Producer\CompetingConsumers.Producer.csproj", "{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompetingConsumers", "CompetingConsumers", "{853FA7E4-C287-4479-9C18-5C63691CAD58}"
 	ProjectSection(SolutionItems) = preProject
 		CompetingConsumersExe.ps1 = CompetingConsumersExe.ps1
-		CompetingConsumers_Readme.txt = CompetingConsumers_Readme.txt
+		CompetingConsumersReadme.txt = CompetingConsumersReadme.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{123C5143-A147-46CD-A044-5A8544B6C2C1}"
@@ -123,10 +121,6 @@ Global
 		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12B5B4C1-0F38-47AA-9B74-AF8499099E78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -154,7 +148,6 @@ Global
 		{D89D98AA-5474-41D4-8387-66C3C3A5AA2D} = {337B94A3-8EF6-4DAA-8DC6-119A9CA55753}
 		{D3C6F91E-F455-497B-82B6-275B0D307F25} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
 		{64D5B4B2-71CB-4DE6-9DCE-B18DA8B13873} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
-		{12B5B4C1-0F38-47AA-9B74-AF8499099E78} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
 		{773706BD-9A56-40F2-8698-3B1ECC8E8F3F} = {853FA7E4-C287-4479-9C18-5C63691CAD58}
 		{853FA7E4-C287-4479-9C18-5C63691CAD58} = {123C5143-A147-46CD-A044-5A8544B6C2C1}
 	EndGlobalSection
