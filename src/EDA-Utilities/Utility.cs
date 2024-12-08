@@ -1,8 +1,9 @@
-﻿using MassTransit;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,18 +11,22 @@ namespace RabbitMQExchanges.BuildingBlocks
 {
     public static class Utility
     {
-        public static void PrintMessagePayloadWithHeaders<T>(ConsumeContext<T> context) where T : class
+        public static void PrintMessagePayloadWithHeaders(object? _message, 
+            IEnumerable<KeyValuePair<string,object>> _headers,
+            Guid? _correlationId,
+            Guid? _messageId,
+            Guid? _conversationId) 
         {
-            var message = context.Message;
+            var message = _message;
 
             var messageJson = JsonConvert.SerializeObject(message, Formatting.Indented);
 
-            var headers = context.Headers.GetAll();
+            var headers = _headers;
             var headersJson = JsonConvert.SerializeObject(headers, Formatting.Indented);
 
-            var messageId = context.MessageId;
-            var conversationId = context.ConversationId;
-            var correlationId = context.CorrelationId;
+            var conversationId = _conversationId;
+            var messageId = _messageId;
+            var correlationId = _correlationId;
 
             var metadata = new
             {

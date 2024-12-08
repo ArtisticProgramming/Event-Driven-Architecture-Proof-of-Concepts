@@ -1,5 +1,6 @@
 ﻿using MassTransit;
 using RabbitMQExchanges.BuildingBlocks;
+using RabbitMQExchanges.BuildingBlocks.Service;
 
 namespace RabbitMQExchanges.BuildingBlocks
 {
@@ -17,41 +18,3 @@ namespace RabbitMQExchanges.BuildingBlocks
         }
     }
 }
-
-
-//using MassTransit;
-//using RabbitMQExchanges.BuildingBlocks;
-
-//namespace DirectExchangeApp.Producer
-//{
-//    internal class Program
-//    {
-
-//        static async Task Main(string[] args)
-//        {
-//            Console.WriteLine("Running xxxxxx.");
-
-//            var busControl = Bus.Factory.CreateUsingRabbitMq(cfg =>
-//            {
-//                cfg.BuildDefulatHost();
-//            });
-//            await busControl.StartAsync();
-//            try
-//            {
-//                while (true)
-//                {
-//                    Console.ReadKey();
-//                }
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Error: {ex.Message}");
-//                await Task.Run(() => Console.ReadKey());
-//            }
-//            finally
-//            {
-//                await busControl.StopAsync();
-//            }
-//        }
-//    }
-//}

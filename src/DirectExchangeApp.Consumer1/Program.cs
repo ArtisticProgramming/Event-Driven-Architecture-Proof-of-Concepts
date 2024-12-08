@@ -8,7 +8,11 @@ namespace DirectExchangeApp.Producer
     {
         public Task Consume(ConsumeContext<UserRegisteredEvent> context)
         {
-            Utility.PrintMessagePayloadWithHeaders(context);
+            Utility.PrintMessagePayloadWithHeaders(context.Message,
+                                 context.Headers.GetAll(),
+                                 context.CorrelationId,
+                                 context.MessageId,
+                                 context.CorrelationId);
 
             return Task.CompletedTask;
         }

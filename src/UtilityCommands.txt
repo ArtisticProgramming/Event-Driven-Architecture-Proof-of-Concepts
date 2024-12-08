@@ -4,3 +4,5 @@ $projectName = "CompetingConsumers.Consumer3"; dotnet new console -n $projectNam
 $projectName = "CompetingConsumers.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 
 
+$projectName = "EnvelopeWrapper.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "EnvelopeWrapper.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
