@@ -6,3 +6,9 @@ $projectName = "CompetingConsumers.Producer"; dotnet new console -n $projectName
 
 $projectName = "EnvelopeWrapper.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 $projectName = "EnvelopeWrapper.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+
+
+
+$projectName = "FanoutExchangeApp.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "FanoutExchangeApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "FanoutExchangeApp.Consumer2"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"

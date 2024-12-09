@@ -23,7 +23,6 @@ namespace EnvelopeWrapper.Producer
 
                 cfg.Publish<EnvlopeWrapper>(x => x.ExchangeType = "direct");
 
-
             });
 
             await busControl.StartAsync();
