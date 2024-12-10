@@ -126,6 +126,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PriorityQueue", "PriorityQueue", "{5B877B63-E59A-4746-975D-3E3A7B69FAE6}"
 	ProjectSection(SolutionItems) = preProject
 		PriorityQueueAppExe.ps1 = PriorityQueueAppExe.ps1
+		PriorityQueueReadme.txt = PriorityQueueReadme.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Response", "RpcApp.Response\RpcApp.Response.csproj", "{84735D6A-EB8A-488B-BC40-A2FE7898A99A}"
