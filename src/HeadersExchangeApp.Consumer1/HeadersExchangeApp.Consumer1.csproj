@@ -7,8 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HeadersExchangeApp.Producer\HeadersExchangeApp.Producer.csproj" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<PackageReference Include="RabbitMQ.Client" Version="6.2.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\EDA-Utilities\EDA-Utilities.csproj" />
+	</ItemGroup>
 </Project>

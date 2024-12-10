@@ -32,8 +32,9 @@ class Program : BaseRabbitMq
                 var body = ea.Body.ToArray();
                 var message = GetString(body);
 
+                PrintMessageHeader(ea.BasicProperties.Headers);
 
-                Console.WriteLine($" [x] Received '{message}'");
+                Console.WriteLine($" [x] Received '{message}' with the Priority: {ea.BasicProperties.Priority}");
             };
 
             channel.BasicConsume(
@@ -53,4 +54,6 @@ class Program : BaseRabbitMq
             Stop();
         }
     }
+
+
 }

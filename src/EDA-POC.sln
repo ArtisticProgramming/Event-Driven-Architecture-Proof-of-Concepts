@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Topic", "Ex_Topic", "{F4
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Headers", "Ex_Headers", "{89C74D85-F999-4F36-BF54-34FDFA282E36}"
+	ProjectSection(SolutionItems) = preProject
+		HeaderExchangeReadme.txt = HeaderExchangeReadme.txt
+		HeadersExchangeAppExe.ps1 = HeadersExchangeAppExe.ps1
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout", "Ex_Fanout", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
 EndProject

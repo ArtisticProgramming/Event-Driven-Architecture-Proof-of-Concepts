@@ -26,6 +26,19 @@ namespace EDA_Utilities
             connection.Dispose();
         }
 
+        protected static void PrintMessageHeader(IDictionary<string, object> headers)
+        {
+            if (headers != null)
+            {
+                Console.WriteLine("Headers:");
+                foreach (var header in headers)
+                {
+                    var key = header.Key;
+                    var value = Encoding.UTF8.GetString((byte[])header.Value);
+                    Console.WriteLine($"  {key}: {value}");
+                }
+            }
+        }
         protected static byte[] GetByts(string response)
         {
             if (response == null) return new byte[0];

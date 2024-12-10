@@ -24,38 +24,43 @@ class Program : BaseRabbitMq
 
             var messages = new[]
             {
-                new { Body = "Low priority message | Priority : 1", Priority = 1 },
-                new { Body = "Low priority message | Priority : 2 ", Priority = 2 },
-                new { Body = "Low priority message | Priority : 3", Priority = 3 },
-                new { Body = "Medium priority message | Priority : 5", Priority = 5 },
-                new { Body = "Medium priority message | Priority : 7", Priority = 7 },
-                new { Body = "High priority message | Priority : 9", Priority = 9 },
-                new { Body = "Low priority message[2] | Priority : 1", Priority = 1 },
-                new { Body = "High priority message | Priority : 10", Priority = 10 },
-                new { Body = "Medium priority message | Priority : 6", Priority = 6 },
-                new { Body = "Medium priority message | Priority : 5", Priority = 5 },
+                new { Body = "Low priority message", Priority = 1 },
+                new { Body = "Low priority message", Priority = 1 },
+                new { Body = "Low priority message ", Priority = 2 },
+                new { Body = "Low priority message", Priority = 3 },
+                new { Body = "Medium priority message ", Priority = 5 },
+                new { Body = "Medium priority message ", Priority = 7 },
+                new { Body = "High priority message",  Priority = 9 },
+                new { Body = "Low priority message", Priority = 1 },
+                new { Body = "High priority message" , Priority = 10 },
+                new { Body = "Medium priority message", Priority = 6 },
+                new { Body = "Medium priority message", Priority = 5 },
+            };
 
-
-              };
             Console.WriteLine("Proccessing by the highest priority");
-            foreach (var message in messages)
+
+            while (true)
             {
-                var body = GetByts(message.Body);
+                foreach (var message in messages)
+                {
+                    var body = GetByts(message.Body);
 
-                var properties = channel.CreateBasicProperties();
+                    var properties = channel.CreateBasicProperties();
 
-                //set the Priority
-                properties.Priority = (byte)message.Priority;
+                    //set the Priority
+                    properties.Priority = (byte)message.Priority;
 
-                channel.BasicPublish(
-                    exchange: "",
-                    routingKey: queueName,
-                    basicProperties: properties,
-                    body: body);
+                    channel.BasicPublish(
+                        exchange: "",
+                        routingKey: queueName,
+                        basicProperties: properties,
+                        body: body);
 
-                Console.WriteLine($" [x] Sent '{message.Body}' with priority {message.Priority}");
+                    Console.WriteLine($" [x] Sent '{message.Body}' with priority {message.Priority}");
+                }
+                Console.ReadLine();
             }
-            Console.ReadLine();
+
 
         }
         catch (Exception ex)
