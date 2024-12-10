@@ -4,6 +4,7 @@ using System;
 using System.Text;
 using Newtonsoft.Json;
 using EDA_Utilities.Model;
+using EDA_Utilities;
 
 class Program : BaseRabbitMq
 {

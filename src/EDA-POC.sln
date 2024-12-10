@@ -14,22 +14,22 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Producer",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoubleWritingApp.Consumer1", "DoubleWritingApp.Consumer1\DoubleWritingApp.Consumer1.csproj", "{DD8B6E02-8C05-47FF-9FB6-9BA78867EC45}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ-Exchanges", "RabbitMQ-Exchanges", "{BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct", "Direct", "{D3063848-42AE-4D95-BDF0-1D95F672C0F1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Direct", "Ex_Direct", "{D3063848-42AE-4D95-BDF0-1D95F672C0F1}"
 	ProjectSection(SolutionItems) = preProject
 		DirectExchangeAppExe.ps1 = DirectExchangeAppExe.ps1
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topic", "Topic", "{F48EC245-1123-492D-B7F0-88EAF4B60A6C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Topic", "Ex_Topic", "{F48EC245-1123-492D-B7F0-88EAF4B60A6C}"
 	ProjectSection(SolutionItems) = preProject
 		TopicExchangeAppExe.ps1 = TopicExchangeAppExe.ps1
 		TopicExchangeReadme.txt = TopicExchangeReadme.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Headers", "Headers", "{89C74D85-F999-4F36-BF54-34FDFA282E36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Headers", "Ex_Headers", "{89C74D85-F999-4F36-BF54-34FDFA282E36}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fanout", "Fanout", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout", "Ex_Fanout", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
 	ProjectSection(SolutionItems) = preProject
@@ -112,6 +112,20 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Consumer2", "FanoutExchangeApp.Consumer2\FanoutExchangeApp.Consumer2.csproj", "{9B474CE9-FB5D-49D6-882B-1E34D75E7640}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3CC94DE5-42A0-4B4C-BFBD-440BE0A560E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC", "RPC", "{2B96BA03-F494-43EE-A8BC-E01DD69F2892}"
+	ProjectSection(SolutionItems) = preProject
+		RpcAppExe.ps1 = RpcAppExe.ps1
+		RpcAppReadme.txt = RpcAppReadme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pub_Sub", "Pub_Sub", "{F6559359-0385-44B2-9166-02DDBB89E2DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Priority", "Priority", "{5B877B63-E59A-4746-975D-3E3A7B69FAE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Response", "RpcApp.Response\RpcApp.Response.csproj", "{84735D6A-EB8A-488B-BC40-A2FE7898A99A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Request", "RpcApp.Request\RpcApp.Request.csproj", "{3F855A75-A0ED-4A0D-B461-1094C8ED7349}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -215,6 +229,14 @@ Global
 		{9B474CE9-FB5D-49D6-882B-1E34D75E7640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B474CE9-FB5D-49D6-882B-1E34D75E7640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B474CE9-FB5D-49D6-882B-1E34D75E7640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84735D6A-EB8A-488B-BC40-A2FE7898A99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84735D6A-EB8A-488B-BC40-A2FE7898A99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84735D6A-EB8A-488B-BC40-A2FE7898A99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84735D6A-EB8A-488B-BC40-A2FE7898A99A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F855A75-A0ED-4A0D-B461-1094C8ED7349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F855A75-A0ED-4A0D-B461-1094C8ED7349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F855A75-A0ED-4A0D-B461-1094C8ED7349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F855A75-A0ED-4A0D-B461-1094C8ED7349}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -254,6 +276,11 @@ Global
 		{14A2F617-40FE-4A87-8DBE-36E95A382A03} = {8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}
 		{B275046A-05A5-4992-AE51-D4B9EEE62424} = {8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}
 		{9B474CE9-FB5D-49D6-882B-1E34D75E7640} = {8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}
+		{2B96BA03-F494-43EE-A8BC-E01DD69F2892} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
+		{F6559359-0385-44B2-9166-02DDBB89E2DD} = {123C5143-A147-46CD-A044-5A8544B6C2C1}
+		{5B877B63-E59A-4746-975D-3E3A7B69FAE6} = {BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}
+		{84735D6A-EB8A-488B-BC40-A2FE7898A99A} = {2B96BA03-F494-43EE-A8BC-E01DD69F2892}
+		{3F855A75-A0ED-4A0D-B461-1094C8ED7349} = {2B96BA03-F494-43EE-A8BC-E01DD69F2892}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}

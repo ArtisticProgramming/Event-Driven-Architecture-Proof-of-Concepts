@@ -1,23 +1,39 @@
 ﻿using RabbitMQ.Client;
+using System.Text;
 
-public class BaseRabbitMq
+namespace EDA_Utilities
 {
-    public static IModel channel { get; set; }
-    public static ConnectionFactory factory { get; set; }
-    public static IConnection connection { get; set; }
-    public static void Start()
+    public class BaseRabbitMq
     {
-        Console.WriteLine("Connecting to RabbitMq...");
-        factory = new ConnectionFactory() { HostName = "localhost" };
-        connection = factory.CreateConnection();
-        channel = connection.CreateModel();
-    }
+        public static IModel channel { get; set; }
+        public static ConnectionFactory factory { get; set; }
+        public static IConnection connection { get; set; }
+        public static void Start()
+        {
+            Console.WriteLine("Connecting to RabbitMq...");
+            factory = new ConnectionFactory() { HostName = "localhost" };
+            connection = factory.CreateConnection();
+            channel = connection.CreateModel();
+        }
 
-    public static void Stop()
-    {
-        Console.WriteLine("Disconnecting the RabbitMq...");
+        public static void Stop()
+        {
+            Console.WriteLine("Disconnecting the RabbitMq...");
 
-        channel.Dispose();
-        connection.Dispose();
+            channel.Close();
+            channel.Dispose();
+            connection.Close();
+            connection.Dispose();
+        }
+
+        protected static byte[] GetByts(string response)
+        {
+            return Encoding.UTF8.GetBytes(response);
+        }
+
+        protected static string GetString(byte[] body)
+        {
+            return Encoding.UTF8.GetString(body);
+        }
     }
 }

@@ -12,3 +12,8 @@ $projectName = "EnvelopeWrapper.Consumer1"; dotnet new console -n $projectName -
 $projectName = "FanoutExchangeApp.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 $projectName = "FanoutExchangeApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 $projectName = "FanoutExchangeApp.Consumer2"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+
+
+$projectName = "RpcApp.Receiver"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "RpcApp.Sender"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+

@@ -3,6 +3,7 @@ using System;
 using System.Text;
 using Newtonsoft.Json;
 using EDA_Utilities.Model;
+using EDA_Utilities;
 
 class Program : BaseRabbitMq
 {
@@ -34,11 +35,11 @@ class Program : BaseRabbitMq
                 string jsonMessage = JsonConvert.SerializeObject(log);
                 var body = Encoding.UTF8.GetBytes(jsonMessage);
 
-
                 channel.BasicPublish(exchange: exchangeName,
                                      routingKey: routingKey,
                                      basicProperties: null,
                                      body: body);
+
                 conunter++;
                 Console.WriteLine($"[#{conunter}] | {DateTime.Now.ToLongTimeString()} | Sent: {jsonMessage} with Routing Key: {routingKey}");
             }
