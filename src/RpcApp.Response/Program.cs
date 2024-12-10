@@ -22,12 +22,13 @@ public class Program : BaseRabbitMq
 
             consumer.Received += (model, ea) =>
             {
-                string response = null;
+                string? response = null;
                 byte[] body = ea.Body.ToArray();
                 IBasicProperties props = ea.BasicProperties;
                 IBasicProperties replyProps = channel.CreateBasicProperties();
                 //Set the same CorrelationId for response
                 replyProps.CorrelationId= props.CorrelationId;
+
                 try
                 {
                     string message = GetString(body);
@@ -41,7 +42,7 @@ public class Program : BaseRabbitMq
                 }
                 finally
                 {
-                    var responseByts = GetByts(response);
+                    byte[] responseByts = GetByts(response);
                     channel.BasicPublish(exchange: "", routingKey: props.ReplyTo, props, responseByts);
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 }
@@ -57,7 +58,7 @@ public class Program : BaseRabbitMq
         }
         finally
         {
-            //Stop();
+            Stop();
         }
     }
 }

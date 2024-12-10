@@ -28,11 +28,13 @@ namespace EDA_Utilities
 
         protected static byte[] GetByts(string response)
         {
+            if (response == null) return new byte[0];
             return Encoding.UTF8.GetBytes(response);
         }
 
         protected static string GetString(byte[] body)
         {
+
             return Encoding.UTF8.GetString(body);
         }
     }

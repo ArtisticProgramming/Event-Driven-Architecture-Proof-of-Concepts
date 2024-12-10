@@ -14,6 +14,6 @@ $projectName = "FanoutExchangeApp.Consumer1"; dotnet new console -n $projectName
 $projectName = "FanoutExchangeApp.Consumer2"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 
 
-$projectName = "RpcApp.Receiver"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
-$projectName = "RpcApp.Sender"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "PriorityQueueApp.Producer"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
+$projectName = "PriorityQueueApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 
