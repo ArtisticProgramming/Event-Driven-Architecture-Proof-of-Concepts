@@ -17,12 +17,16 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 ### **RabbitMQ Exchange Types**
 - **Direct**  
   Route messages to specific queues based on exact routing keys.
+  ![Project Structure](img/direct.png)
 - **Fanout**  
   Broadcast messages to all queues bound to the exchange.
+  ![Project Structure](img/fanout.png)
 - **Headers**  
   Route messages based on header attributes, offering flexible filtering.
+  ![Project Structure](img/headers.png)
 - **Topic**  
   Use wildcard patterns to achieve flexible routing for complex scenarios.
+  ![Project Structure](img/topic.png)
 - **Priority Queue**  
   Prioritize message delivery based on predefined priority levels.
 - **RPC (Remote Procedure Call)**  
