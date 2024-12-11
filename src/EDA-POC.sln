@@ -59,6 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
 	ProjectSection(SolutionItems) = preProject
+		GlobalUsing.cs = GlobalUsing.cs
 		ProducerConsumerRabbitmqClientTemplate.txt = ProducerConsumerRabbitmqClientTemplate.txt
 		UtilityCommands.txt = UtilityCommands.txt
 	EndProjectSection
@@ -144,7 +145,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Consumer1"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saga", "Saga", "{C80EE318-A390-438F-B5A8-7B715160E143}"
 	ProjectSection(SolutionItems) = preProject
-		SagaReadme.md = SagaReadme.md
+		Saga\SagaReadme.md = Saga\SagaReadme.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{A0DA3334-9E80-48D6-9419-FADF2559039B}"
@@ -158,6 +159,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MassTransit", "MassTransit", "{29B557DA-69C2-4A7E-8EDE-36D05E47DC17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitClient", "RabbitClient", "{BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer", "Saga\Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer\Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer.csproj", "{1831C620-7037-4311-A10E-24D9F89AAB51}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitClient_App.PaymentConsumer", "Saga\Saga_Orchestration_RabbitClient_App.PaymentConsumer\Saga_Orchestration_RabbitClient_App.PaymentConsumer.csproj", "{0383407D-A66A-4D26-AD49-FC89CDF2BE0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitClient_App.StockConsumer", "Saga\Saga_Orchestration_RabbitClient_App.StockConsumer\Saga_Orchestration_RabbitClient_App.StockConsumer.csproj", "{B5070569-E72E-407B-8B33-E74A687D3416}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitClient_App.DeliveryConsumer", "Saga\Saga_Orchestration_RabbitClient_App.DeliveryConsumer\Saga_Orchestration_RabbitClient_App.DeliveryConsumer.csproj", "{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -277,6 +286,22 @@ Global
 		{EB38BAB9-6AD2-48AA-8482-D0BE8021D44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB38BAB9-6AD2-48AA-8482-D0BE8021D44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB38BAB9-6AD2-48AA-8482-D0BE8021D44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1831C620-7037-4311-A10E-24D9F89AAB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1831C620-7037-4311-A10E-24D9F89AAB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1831C620-7037-4311-A10E-24D9F89AAB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1831C620-7037-4311-A10E-24D9F89AAB51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5070569-E72E-407B-8B33-E74A687D3416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5070569-E72E-407B-8B33-E74A687D3416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5070569-E72E-407B-8B33-E74A687D3416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5070569-E72E-407B-8B33-E74A687D3416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -329,6 +354,10 @@ Global
 		{7937F024-8589-4839-884D-85B2D06A5DB8} = {70B6FFB5-70F9-495C-BE10-B956FDAEF4B8}
 		{29B557DA-69C2-4A7E-8EDE-36D05E47DC17} = {A0DA3334-9E80-48D6-9419-FADF2559039B}
 		{BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5} = {A0DA3334-9E80-48D6-9419-FADF2559039B}
+		{1831C620-7037-4311-A10E-24D9F89AAB51} = {BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5}
+		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E} = {BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5}
+		{B5070569-E72E-407B-8B33-E74A687D3416} = {BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5}
+		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3} = {BCFD32F6-BDF4-480E-9C6E-BB080A5FFFD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}

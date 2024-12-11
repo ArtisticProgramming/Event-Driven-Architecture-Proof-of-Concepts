@@ -16,10 +16,10 @@ $projectName = "PriorityQueueApp.Producer"; dotnet new console -n $projectName -
 $projectName = "PriorityQueueApp.Consumer1"; dotnet new console -n $projectName -f net8.0; dotnet sln add "$projectName\$projectName.csproj"
 -------------------------------------------------------------------
 
-$f = "Saga"; $projectName = "SagaApp.Producer";  if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
-$f = "Saga"; $projectName = "SagaApp.Consumer1"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
-$f = "Saga"; $projectName = "SagaApp.Consumer2"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
-$f = "Saga"; $projectName = "SagaApp.Consumer3"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+$f = "Saga"; $projectName = "Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer";  if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+$f = "Saga"; $projectName = "Saga_Orchestration_RabbitClient_App.PaymentConsumer"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+$f = "Saga"; $projectName = "Saga_Orchestration_RabbitClient_App.StockConsumer"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+$f = "Saga"; $projectName = "Saga_Orchestration_RabbitClient_App.DeliveryConsumer"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
 
 
 
