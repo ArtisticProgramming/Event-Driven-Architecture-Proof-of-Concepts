@@ -15,7 +15,7 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
   Add metadata to messages to provide context and flexibility in processing.
 
 ### **RabbitMQ**
-  #### **Exchanges**
+#### **Exchanges**
 - **Direct**  
   Route messages to specific queues based on exact routing keys.
   ![Project Structure](img/direct.png)
@@ -28,7 +28,8 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 - **Topic**  
   Use wildcard patterns to achieve flexible routing for complex scenarios.
   ![Project Structure](img/topic.png)
-  #### **Patterns**
+
+#### **Patterns**
 - **Priority Queue**  
   Prioritize message delivery based on predefined priority levels.
   ![Project Structure](img/priorityqueue.png)  
