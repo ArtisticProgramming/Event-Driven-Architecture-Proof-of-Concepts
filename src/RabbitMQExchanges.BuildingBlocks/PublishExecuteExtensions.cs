@@ -16,7 +16,7 @@ namespace RabbitMQExchanges.BuildingBlocks
       where T : class
         {
             var envlope = EnvlopeWrapperService.XmlWrap(message);
-            Console.WriteLine("Message put inside the Envlope");
+            Console.WriteLine("The message was placed inside the envelope.");
 
             return endpoint.Publish<EnvlopeWrapper>(envlope, callback.ToPipe(), cancellationToken);
         }
@@ -26,7 +26,7 @@ namespace RabbitMQExchanges.BuildingBlocks
       where T : class
         {
             EnvlopeWrapper envlope = EnvlopeWrapperService.XmlWrapWithEncryption(message);
-            Console.WriteLine("Message put inside the Envlope");
+            Console.WriteLine("The message was placed inside the envelope.");
 
             return endpoint.Publish<EnvlopeWrapper>(envlope, callback.ToPipe(), cancellationToken);
         }
