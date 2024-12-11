@@ -29,9 +29,10 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
   ![Project Structure](img/topic.png)
 - **Priority Queue**  
   Prioritize message delivery based on predefined priority levels.
+  ![Project Structure](img/priorityqueue.png)  
 - **RPC (Remote Procedure Call)**  
   Implement synchronous communication over RabbitMQ for request-response workflows.
-
+  ![Project Structure](img/rpc.png)  
 ### **Versioning**
 - **Double Writing**  
   Support message versioning and schema evolution by maintaining backward compatibility during system upgrades.
