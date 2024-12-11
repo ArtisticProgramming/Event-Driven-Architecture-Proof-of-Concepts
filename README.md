@@ -45,9 +45,9 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 ## How to Run
 
 ### **Clone this repository**
-   ```bash
+```bash
    git clone https://github.com/yourusername/Event-Driven-Architecture-POCs.git
-
+```
 ### **Using PowerShell Scripts**
 This repository includes PowerShell scripts to simplify running the projects.  
 
