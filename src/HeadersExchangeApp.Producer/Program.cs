@@ -38,6 +38,7 @@ class Program : BaseRabbitMq
                     };
 
                     var body = Encoding.UTF8.GetBytes(message.Log);
+
                     channel.BasicPublish(
                         exchange: exchangeName,
                         routingKey: "",

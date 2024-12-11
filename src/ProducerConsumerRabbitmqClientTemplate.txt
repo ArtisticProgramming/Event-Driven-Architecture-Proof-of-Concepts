@@ -1,0 +1,32 @@
+using RabbitMQ.Client;
+using System;
+using System.Text;
+using Newtonsoft.Json;
+using EDA_Utilities.Model;
+using EDA_Utilities;
+
+class Program : BaseRabbitMq
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            Start();
+
+            
+
+            
+
+            Console.ReadLine();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.ToString());
+        }
+        finally 
+        { 
+            Stop(); 
+        }
+    }
+}
+

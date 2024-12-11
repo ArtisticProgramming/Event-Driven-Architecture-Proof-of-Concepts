@@ -43,7 +43,7 @@ class Program : BaseRabbitMq
             {
                 foreach (var message in messages)
                 {
-                    var body = GetByts(message.Body);
+                    var body = GetBytes(message.Body);
 
                     var properties = channel.CreateBasicProperties();
 

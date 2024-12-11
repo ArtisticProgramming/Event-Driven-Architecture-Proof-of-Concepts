@@ -42,7 +42,7 @@ public class Program : BaseRabbitMq
                 }
                 finally
                 {
-                    byte[] responseByts = GetByts(response);
+                    byte[] responseByts = GetBytes(response);
                     channel.BasicPublish(exchange: "", routingKey: props.ReplyTo, props, responseByts);
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                 }

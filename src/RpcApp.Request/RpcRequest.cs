@@ -52,7 +52,7 @@ namespace RpcApp.Request
 
         public void Call(string message)
         {
-            var messageBytes = GetByts(message);
+            var messageBytes = GetBytes(message);
             channel.BasicPublish(exchange: "", routingKey: "rpc_queue", basicProperties: props, body: messageBytes);
             Console.WriteLine($"Sent request: {message}");
         }

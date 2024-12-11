@@ -19,11 +19,16 @@ namespace EDA_Utilities
         public static void Stop()
         {
             Console.WriteLine("Disconnecting the RabbitMq...");
-
-            channel.Close();
-            channel.Dispose();
-            connection.Close();
-            connection.Dispose();
+            if (channel != null)
+            {
+                channel.Close();
+                channel.Dispose();
+            }
+            if (connection !=null)
+            {
+                connection.Close();
+                connection.Dispose();
+            }
         }
 
         protected static void PrintMessageHeader(IDictionary<string, object> headers)
@@ -39,7 +44,7 @@ namespace EDA_Utilities
                 }
             }
         }
-        protected static byte[] GetByts(string response)
+        protected static byte[] GetBytes(string response)
         {
             if (response == null) return new byte[0];
             return Encoding.UTF8.GetBytes(response);

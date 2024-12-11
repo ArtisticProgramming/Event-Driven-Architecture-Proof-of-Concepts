@@ -33,7 +33,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Headers", "Ex_Headers", 
 		HeadersExchangeAppExe.ps1 = HeadersExchangeAppExe.ps1
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout", "Ex_Fanout", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout[Pub Sub Pattern]", "Ex_Fanout[Pub Sub Pattern]", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
+	ProjectSection(SolutionItems) = preProject
+		FanoutExchangeAppExe.ps1 = FanoutExchangeAppExe.ps1
+		FanoutExchangeAppReadme.txt = FanoutExchangeAppReadme.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
 	ProjectSection(SolutionItems) = preProject
@@ -55,6 +59,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
 	ProjectSection(SolutionItems) = preProject
+		ProducerConsumerRabbitmqClientTemplate.txt = ProducerConsumerRabbitmqClientTemplate.txt
 		UtilityCommands.txt = UtilityCommands.txt
 	EndProjectSection
 EndProject
