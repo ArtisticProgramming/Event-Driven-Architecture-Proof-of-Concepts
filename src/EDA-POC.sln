@@ -18,25 +18,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{BB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Direct", "Ex_Direct", "{D3063848-42AE-4D95-BDF0-1D95F672C0F1}"
 	ProjectSection(SolutionItems) = preProject
-		DirectExchangeAppExe.ps1 = DirectExchangeAppExe.ps1
+		Rabbit\DirectExchangeAppExe.ps1 = Rabbit\DirectExchangeAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Topic", "Ex_Topic", "{F48EC245-1123-492D-B7F0-88EAF4B60A6C}"
 	ProjectSection(SolutionItems) = preProject
-		TopicExchangeAppExe.ps1 = TopicExchangeAppExe.ps1
-		TopicExchangeReadme.txt = TopicExchangeReadme.txt
+		Rabbit\TopicExchangeAppExe.ps1 = Rabbit\TopicExchangeAppExe.ps1
+		Rabbit\TopicExchangeReadme.txt = Rabbit\TopicExchangeReadme.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Headers", "Ex_Headers", "{89C74D85-F999-4F36-BF54-34FDFA282E36}"
 	ProjectSection(SolutionItems) = preProject
-		HeaderExchangeReadme.txt = HeaderExchangeReadme.txt
-		HeadersExchangeAppExe.ps1 = HeadersExchangeAppExe.ps1
+		Rabbit\HeaderExchangeReadme.txt = Rabbit\HeaderExchangeReadme.txt
+		Rabbit\HeadersExchangeAppExe.ps1 = Rabbit\HeadersExchangeAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout[Pub Sub Pattern]", "Ex_Fanout[Pub Sub Pattern]", "{8B95FFFD-16DE-4FA9-8FB9-2580EE261BB5}"
 	ProjectSection(SolutionItems) = preProject
-		FanoutExchangeAppExe.ps1 = FanoutExchangeAppExe.ps1
-		FanoutExchangeAppReadme.txt = FanoutExchangeAppReadme.txt
+		Rabbit\FanoutExchangeAppExe.ps1 = Rabbit\FanoutExchangeAppExe.ps1
+		Rabbit\FanoutExchangeAppReadme.txt = Rabbit\FanoutExchangeAppReadme.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
@@ -46,9 +46,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", 
 		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "Rabbit\DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Consumer1", "DirectExchangeApp.Consumer1\DirectExchangeApp.Consumer1.csproj", "{56381244-F7FC-4E19-BCC2-59ED6189306C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Consumer1", "Rabbit\DirectExchangeApp.Consumer1\DirectExchangeApp.Consumer1.csproj", "{56381244-F7FC-4E19-BCC2-59ED6189306C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQExchanges.BuildingBlocks", "RabbitMQExchanges.BuildingBlocks\RabbitMQExchanges.BuildingBlocks.csproj", "{1BC2A5E6-A84A-4675-999F-905BE54A9F60}"
 EndProject
@@ -103,45 +103,45 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnvelopeWrapper.Producer", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnvelopeWrapper.Consumer1", "EnvelopeWrapper.Consumer1\EnvelopeWrapper.Consumer1.csproj", "{C5716D3A-7670-4BD5-904A-1900304535CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Producer", "TopicApp.Producer\TopicApp.Producer.csproj", "{33C59ED6-DA4F-482B-9B02-5F9DEA4A6315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Producer", "Rabbit\TopicApp.Producer\TopicApp.Producer.csproj", "{33C59ED6-DA4F-482B-9B02-5F9DEA4A6315}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Consumer1", "TopicApp.Consumer1\TopicApp.Consumer1.csproj", "{C3EDE70A-76EA-487D-8015-DE8DDD7975AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Consumer1", "Rabbit\TopicApp.Consumer1\TopicApp.Consumer1.csproj", "{C3EDE70A-76EA-487D-8015-DE8DDD7975AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Consumer2", "TopicApp.Consumer2\TopicApp.Consumer2.csproj", "{9017D565-EE8D-4536-AE2B-06A772F13AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Consumer2", "Rabbit\TopicApp.Consumer2\TopicApp.Consumer2.csproj", "{9017D565-EE8D-4536-AE2B-06A772F13AC5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Producer", "HeadersExchangeApp.Producer\HeadersExchangeApp.Producer.csproj", "{543DEB08-69C3-4D49-9811-177602C738F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Producer", "Rabbit\HeadersExchangeApp.Producer\HeadersExchangeApp.Producer.csproj", "{543DEB08-69C3-4D49-9811-177602C738F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Consumer1", "HeadersExchangeApp.Consumer1\HeadersExchangeApp.Consumer1.csproj", "{50CFDDD7-7933-40FE-B986-57E136455BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Consumer1", "Rabbit\HeadersExchangeApp.Consumer1\HeadersExchangeApp.Consumer1.csproj", "{50CFDDD7-7933-40FE-B986-57E136455BCA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Consumer2", "HeadersExchangeApp.Consumer2\HeadersExchangeApp.Consumer2.csproj", "{4E1067E9-45E1-458A-B54D-40D2935F9D27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeadersExchangeApp.Consumer2", "Rabbit\HeadersExchangeApp.Consumer2\HeadersExchangeApp.Consumer2.csproj", "{4E1067E9-45E1-458A-B54D-40D2935F9D27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Producer", "FanoutExchangeApp.Producer\FanoutExchangeApp.Producer.csproj", "{14A2F617-40FE-4A87-8DBE-36E95A382A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Producer", "Rabbit\FanoutExchangeApp.Producer\FanoutExchangeApp.Producer.csproj", "{14A2F617-40FE-4A87-8DBE-36E95A382A03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Consumer1", "FanoutExchangeApp.Consumer1\FanoutExchangeApp.Consumer1.csproj", "{B275046A-05A5-4992-AE51-D4B9EEE62424}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Consumer1", "Rabbit\FanoutExchangeApp.Consumer1\FanoutExchangeApp.Consumer1.csproj", "{B275046A-05A5-4992-AE51-D4B9EEE62424}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Consumer2", "FanoutExchangeApp.Consumer2\FanoutExchangeApp.Consumer2.csproj", "{9B474CE9-FB5D-49D6-882B-1E34D75E7640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FanoutExchangeApp.Consumer2", "Rabbit\FanoutExchangeApp.Consumer2\FanoutExchangeApp.Consumer2.csproj", "{9B474CE9-FB5D-49D6-882B-1E34D75E7640}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{3CC94DE5-42A0-4B4C-BFBD-440BE0A560E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RPC", "RPC", "{2B96BA03-F494-43EE-A8BC-E01DD69F2892}"
 	ProjectSection(SolutionItems) = preProject
-		RpcAppExe.ps1 = RpcAppExe.ps1
-		RpcAppReadme.txt = RpcAppReadme.txt
+		Rabbit\RpcAppExe.ps1 = Rabbit\RpcAppExe.ps1
+		Rabbit\RpcAppReadme.txt = Rabbit\RpcAppReadme.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PriorityQueue", "PriorityQueue", "{5B877B63-E59A-4746-975D-3E3A7B69FAE6}"
 	ProjectSection(SolutionItems) = preProject
-		PriorityQueueAppExe.ps1 = PriorityQueueAppExe.ps1
-		PriorityQueueReadme.txt = PriorityQueueReadme.txt
+		Rabbit\PriorityQueueAppExe.ps1 = Rabbit\PriorityQueueAppExe.ps1
+		Rabbit\PriorityQueueReadme.txt = Rabbit\PriorityQueueReadme.txt
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Response", "RpcApp.Response\RpcApp.Response.csproj", "{84735D6A-EB8A-488B-BC40-A2FE7898A99A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Response", "Rabbit\RpcApp.Response\RpcApp.Response.csproj", "{84735D6A-EB8A-488B-BC40-A2FE7898A99A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Request", "RpcApp.Request\RpcApp.Request.csproj", "{3F855A75-A0ED-4A0D-B461-1094C8ED7349}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RpcApp.Request", "Rabbit\RpcApp.Request\RpcApp.Request.csproj", "{3F855A75-A0ED-4A0D-B461-1094C8ED7349}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Producer", "PriorityQueueApp.Producer\PriorityQueueApp.Producer.csproj", "{686636BC-9C69-4790-AA3C-AB16D2B51477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Producer", "Rabbit\PriorityQueueApp.Producer\PriorityQueueApp.Producer.csproj", "{686636BC-9C69-4790-AA3C-AB16D2B51477}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Consumer1", "PriorityQueueApp.Consumer1\PriorityQueueApp.Consumer1.csproj", "{EB38BAB9-6AD2-48AA-8482-D0BE8021D44F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Consumer1", "Rabbit\PriorityQueueApp.Consumer1\PriorityQueueApp.Consumer1.csproj", "{EB38BAB9-6AD2-48AA-8482-D0BE8021D44F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saga", "Saga", "{C80EE318-A390-438F-B5A8-7B715160E143}"
 	ProjectSection(SolutionItems) = preProject
