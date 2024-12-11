@@ -63,3 +63,12 @@ docker run -d \
 ```
 ### **Using PowerShell Scripts**
 This repository includes PowerShell scripts to simplify running the projects.  
+
+---
+
+## Project Structure
+The following diagram provides an overview of the project structure:
+
+![Project Structure](img/projtree.png)
+
+---
