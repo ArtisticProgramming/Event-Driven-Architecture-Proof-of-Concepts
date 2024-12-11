@@ -48,9 +48,6 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 ```bash
    git clone https://github.com/yourusername/Event-Driven-Architecture-POCs.git
 ```
-### **Using PowerShell Scripts**
-This repository includes PowerShell scripts to simplify running the projects.  
-
 ### **RabbitMQ Installation**
 To run the project, you need to have RabbitMQ installed. You can install RabbitMQ manually or use Docker for a faster setup.
 
@@ -63,3 +60,6 @@ docker run -d \
   -p 5672:5672 \
   -p 15672:15672 \
   rabbitmq:management
+```
+### **Using PowerShell Scripts**
+This repository includes PowerShell scripts to simplify running the projects.  
