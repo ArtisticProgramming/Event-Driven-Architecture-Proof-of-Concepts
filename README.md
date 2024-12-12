@@ -1,6 +1,6 @@
 # Event-Driven Architecture Proof-of-Concepts
 
-This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-Concepts (POCs) using **RabbitMQ**, **C#**, and **MassTransit**. It demonstrates key messaging patterns, RabbitMQ exchange types, and advanced concepts in distributed systems.
+This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-Concepts (POCs) using **RabbitMQ**, **.NET 8**, and **MassTransit**. It demonstrates key messaging patterns, RabbitMQ exchange types, and advanced concepts in distributed systems.
 
 ---
 
@@ -45,7 +45,7 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 ## Technologies Used
 - **RabbitMQ**: A robust message broker for implementing asynchronous messaging and distributed systems.
 - **MassTransit**: A library that simplifies message-based communication with RabbitMQ and other brokers.
-- **C#**
+- **.NET 8**
 
 ---
 
@@ -56,6 +56,9 @@ This repository showcases various **Event-Driven Architecture (EDA)** Proof-of-C
 ```bash
    git clone https://github.com/yourusername/Event-Driven-Architecture-POCs.git
 ```
+### **IDE**
+Open the project with Visual Studio.
+
 ### **RabbitMQ Installation**
 To run the project, you need to have RabbitMQ installed. You can install RabbitMQ manually or use Docker for a faster setup.
 
