@@ -8,6 +8,7 @@
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="RabbitMQ.Client" Version="6.2.3" />
+		<PackageReference Include="Stateless" Version="5.16.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\EDA-Utilities\EDA-Utilities.csproj" />
