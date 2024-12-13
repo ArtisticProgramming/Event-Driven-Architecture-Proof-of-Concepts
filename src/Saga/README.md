@@ -27,3 +27,40 @@ The Saga Pattern is a design pattern used to manage distributed transactions in 
    - **Debugging**: Tracking failures and understanding the saga's state requires robust monitoring and logging.
    - **Data Consistency**: Achieving eventual consistency requires careful design.
 
+---
+
+# Saga Coordination: Choreography vs Orchestration
+
+## Choreography
+
+Choreography is a way to coordinate sagas where participants exchange events without a centralized point of control. With choreography, each local transaction publishes domain events that trigger local transactions in other services.
+
+### Choreography Overview
+
+#### Benefits
+- Good for simple workflows that require few participants and don't need a coordination logic.
+- Doesn't require additional service implementation and maintenance.
+- Doesn't introduce a single point of failure, since the responsibilities are distributed across the saga participants.
+
+#### Drawbacks
+- Workflow can become confusing when adding new steps, as it's difficult to track which saga participants listen to which commands.
+- There's a risk of cyclic dependency between saga participants because they have to consume each other's commands.
+- Integration testing is difficult because all services must be running to simulate a transaction.
+
+---
+
+## Orchestration
+
+Orchestration is a way to coordinate sagas where a centralized controller tells the saga participants what local transactions to execute. The saga orchestrator handles all the transactions and tells the participants which operation to perform based on events. The orchestrator executes saga requests, stores and interprets the states of each task, and handles failure recovery with compensating transactions.
+
+### Orchestration Overview
+
+#### Benefits
+- Good for complex workflows involving many participants or new participants added over time.
+- Suitable when there is control over every participant in the process, and control over the flow of activities.
+- Doesn't introduce cyclical dependencies, because the orchestrator unilaterally depends on the saga participants.
+- Saga participants don't need to know about commands for other participants. Clear separation of concerns simplifies business logic.
+
+#### Drawbacks
+- Additional design complexity requires an implementation of a coordination logic.
+- There's an additional point of failure, because the orchestrator manages the complete workflow.

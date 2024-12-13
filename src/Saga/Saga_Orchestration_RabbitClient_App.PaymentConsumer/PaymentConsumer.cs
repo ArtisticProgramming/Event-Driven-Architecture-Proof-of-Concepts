@@ -17,7 +17,6 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
 
-         
             _channel.ExchangeDeclare(exchange: OrderExchangeName,
                 type: ExchangeType.Direct,
                 durable: true,
