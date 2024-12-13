@@ -6,6 +6,10 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
     {
         private readonly IConnection _connection;
         private readonly IModel _channel;
+        const string OrderStockQueue = "order.place.queue";
+        const string OrderStockBindingKey = "order.place";
+        const string OrderExchangeName = "orders.exchange";
+        const string OrderProccessRoutingKey = "order.process";
 
         public PaymentConsumer()
         {
@@ -13,19 +17,15 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
 
-            var exchangeName = "orders.exchange";
-            var queueName = "order.place.queue";
-            string bindingKey = "order.place";
-
-            _channel.ExchangeDeclare(exchange: exchangeName,
+         
+            _channel.ExchangeDeclare(exchange: OrderExchangeName,
                 type: ExchangeType.Direct,
                 durable: true,
                 autoDelete: false,
                 arguments: null);
 
-            _channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false);
-            _channel.QueueBind(queue: queueName, exchange: exchangeName, routingKey: bindingKey);
-
+            _channel.QueueDeclare(queue: OrderStockQueue, durable: false, exclusive: false, autoDelete: false);
+            _channel.QueueBind(queue: OrderStockQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
         }
 
         public void Run()
@@ -61,8 +61,8 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
         {
             var response = new { Type = "PaymentAccepted", OrderId = orderId };
             var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
-            _channel.BasicPublish(exchange: "orders.exchange",
-                                  routingKey: "order.process",
+            _channel.BasicPublish(exchange: OrderExchangeName,
+                                  routingKey: OrderProccessRoutingKey,
                                   basicProperties: null,
                                   body: body);
         }
@@ -72,8 +72,8 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
             var response = new { Type = "PaymentRejected", OrderId = orderId };
             var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
 
-            _channel.BasicPublish(exchange: "orders.exchange",
-                                  routingKey: "order.process",
+            _channel.BasicPublish(exchange: OrderExchangeName,
+                                  routingKey: OrderProccessRoutingKey,
                                   basicProperties: null,
                                   body: body);
         }
