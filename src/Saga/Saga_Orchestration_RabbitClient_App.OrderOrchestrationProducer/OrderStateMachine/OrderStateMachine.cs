@@ -6,43 +6,52 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer.OrderState
+namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer.OrderStateMachine
 {
     public class OrderStateMachine
     {
-        private StateMachine<OrderState, OrderTrigger> _sm { get; set; }
+        private StateMachine<OrderState, OrderTrigger> sm { get; set; }
 
         public OrderStateMachine()
         {
             //Init
-            _sm = new StateMachine<OrderState, OrderTrigger>(OrderState.New);
+            sm = new StateMachine<OrderState, OrderTrigger>(OrderState.New);
 
             //Config
-            _sm.Configure(OrderState.New)
+            sm.Configure(OrderState.New)
                 .Permit(OrderTrigger.PlaceOrder, OrderState.PendingPayment);
 
-            _sm.Configure(OrderState.PendingPayment)
+            sm.Configure(OrderState.PendingPayment)
                 .Permit(OrderTrigger.PaymentAccepted, OrderState.PendingStock)
                 .Permit(OrderTrigger.PaymentRejected, OrderState.Cancelled);
 
-            _sm.Configure(OrderState.PendingStock)
+            sm.Configure(OrderState.PendingStock)
                 .Permit(OrderTrigger.StockConfirmed, OrderState.PendingDelivery)
                 .Permit(OrderTrigger.StockRejected, OrderState.Cancelled);
 
-            _sm.Configure(OrderState.PendingDelivery)
+            sm.Configure(OrderState.PendingDelivery)
                 .Permit(OrderTrigger.Delivered, OrderState.Completed);
 
-            _sm.Configure(OrderState.Completed)
+            sm.Configure(OrderState.Completed)
                 .Permit(OrderTrigger.OrderCancelled, OrderState.Cancelled);
 
         }
 
         public void Fire(OrderTrigger trigger)
         {
-            _sm.Fire(trigger);
+            var oldState = State;
+            sm.Fire(trigger);
+            PrintState(oldState);
         }
 
-        public OrderState State => _sm.State;
+        private void PrintState(OrderState oldState)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"State changed from to [{oldState.ToString()}] to [{State.ToString()}]");
+            Console.ResetColor();
+        }
+
+        public OrderState State => sm.State;
 
     }
 }

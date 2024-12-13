@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer.OrderState
+namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer.OrderStateMachine
 {
     public enum OrderState
     {
