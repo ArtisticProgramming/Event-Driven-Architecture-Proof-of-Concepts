@@ -2,16 +2,16 @@
 
 namespace Saga_Orchestration_RabbitClient_App.StockConsumer
 {
-    public class StockConsumer
+    public class DeliveryConsumer
     {
         private IConnection _connection;
         private IModel _channel;
-        const string OrderStockQueue = "order.stock.queue";
-        const string OrderStockBindingKey = "order.stock";
+        const string OrderStockQueue = "order.Deliver.queue";
+        const string OrderStockBindingKey = "order.Deliver";
         const string OrderExchangeName = "orders.exchange";
         const string OrderProccessRoutingKey = "order.process";
 
-        public StockConsumer()
+        public DeliveryConsumer()
         {
             RabbitMqInit();
         }
@@ -44,16 +44,7 @@ namespace Saga_Orchestration_RabbitClient_App.StockConsumer
                 Console.WriteLine($"Processing stock for OrderId: {_message.OrderId} | Type: {_message.Type}");
 
                 //Operation done successfully
-                var succeeded = true;
-
-                if (succeeded)
-                {
-                    RespondWithStockConfirmed(_message.OrderId);
-                }
-                else
-                {
-                    RespondWithStockRejected(_message.OrderId);
-                }
+                RespondWithDelivered(_message.OrderId);
             };
 
             _channel.BasicConsume(queue: OrderStockQueue, autoAck: true, consumer: consumer);
@@ -62,9 +53,9 @@ namespace Saga_Orchestration_RabbitClient_App.StockConsumer
             Console.ReadLine();
         }
 
-        private void RespondWithStockConfirmed(Guid orderId)
+        private void RespondWithDelivered(Guid orderId)
         {
-            var response = new { Type = "StockConfirmed", OrderId = orderId };
+             var response = new { Type = "Delivered", OrderId = orderId };
             var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
             _channel.BasicPublish(exchange: OrderExchangeName,
                                   routingKey: OrderProccessRoutingKey,
@@ -72,16 +63,6 @@ namespace Saga_Orchestration_RabbitClient_App.StockConsumer
                                   body: body);
         }
 
-        private void RespondWithStockRejected(Guid orderId)
-        {
-            var response = new { Type = "StockRejected", OrderId = orderId };
-            var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
-
-            _channel.BasicPublish(exchange: OrderExchangeName,
-                                  routingKey: OrderProccessRoutingKey,
-                                  basicProperties: null,
-                                  body: body);
-        }
 
         public void Close()
         {
