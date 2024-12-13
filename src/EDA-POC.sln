@@ -145,7 +145,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueApp.Consumer1"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saga", "Saga", "{C80EE318-A390-438F-B5A8-7B715160E143}"
 	ProjectSection(SolutionItems) = preProject
-		Saga\SagaReadme.md = Saga\SagaReadme.md
+		Saga\README.md = Saga\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{A0DA3334-9E80-48D6-9419-FADF2559039B}"
