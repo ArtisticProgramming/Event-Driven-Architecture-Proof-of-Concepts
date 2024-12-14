@@ -63,7 +63,7 @@ namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer
 
                 case "PaymentRejected":
                     _stateMachine.Fire(OrderTrigger.PaymentRejected);
-                    CompensatePayment(orderEvent);
+                    Compensate(orderEvent);
                     break;
                 #endregion
 
@@ -76,7 +76,7 @@ namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer
 
                 case "StockRejected":
                     _stateMachine.Fire(OrderTrigger.StockRejected);
-                    CompensateStock(orderEvent);
+                    Compensate(orderEvent);
                     break;
                 #endregion
 
@@ -91,13 +91,10 @@ namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer
             }
         }
 
-        private void CompensatePayment(OrderEvent orderEvent)
+        private void Compensate(OrderEvent orderEvent)
         {
-            Console.WriteLine($"CompensatePaymentRejected called");
-        }
-        private void CompensateStock(OrderEvent orderEvent)
-        {
-            Console.WriteLine($"CompensateStockRejected called");
+            _rabbitMqServiceBusService.PublishMessage("order.cancelled.fanout.exchange",
+                     "", orderEvent);
         }
 
         internal void Close()

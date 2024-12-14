@@ -6,10 +6,12 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
     {
         private readonly IConnection _connection;
         private readonly IModel _channel;
-        const string OrderStockQueue = "order.place.queue";
+        const string OrderQueue = "order.place.queue";
         const string OrderStockBindingKey = "order.place";
         const string OrderExchangeName = "orders.exchange";
         const string OrderProccessRoutingKey = "order.process";
+        const string OrderCancelledExchangeName = "order.cancelled.fanout.exchange";
+        private string OrderCancelledQueue { get;  set; }
 
         public PaymentConsumer()
         {
@@ -23,13 +25,25 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
                 autoDelete: false,
                 arguments: null);
 
-            _channel.QueueDeclare(queue: OrderStockQueue, durable: false, exclusive: false, autoDelete: false);
-            _channel.QueueBind(queue: OrderStockQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
+            _channel.ExchangeDeclare(exchange: OrderCancelledExchangeName,
+                type: ExchangeType.Fanout,
+                durable: true,
+                autoDelete: false,
+                arguments: null);
+
+            _channel.QueueDeclare(queue: OrderQueue, durable: false, exclusive: false, autoDelete: false);
+            _channel.QueueBind(queue: OrderQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
+
+            //OrderCancelled
+            OrderCancelledQueue = _channel.QueueDeclare().QueueName;
+            //_channel.QueueDeclare(queue: OrderCancelledQueue, durable: false, exclusive: false, autoDelete: false);
+            _channel.QueueBind(queue: OrderCancelledQueue, exchange: OrderCancelledExchangeName, routingKey: "");
         }
 
         public void Run()
         {
             var consumer = new EventingBasicConsumer(_channel);
+
             consumer.Received += (model, ea) =>
             {
                 var body = ea.Body.ToArray();
@@ -51,6 +65,18 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
             };
 
             _channel.BasicConsume(queue: "order.place.queue", autoAck: true, consumer: consumer);
+
+            var cancelledConsumer = new EventingBasicConsumer(_channel);
+            cancelledConsumer.Received += (model, ea) =>
+            {
+                var body = ea.Body.ToArray();
+                var message = Encoding.UTF8.GetString(body);
+                var paymentMessage = JsonConvert.DeserializeObject<OrderEvent>(message);
+
+                Console.WriteLine($"*** Order Cancelled. OrderId: {paymentMessage.OrderId} | Type: {paymentMessage.Type}");
+            };
+
+            _channel.BasicConsume(queue: OrderCancelledQueue, autoAck: true, consumer: cancelledConsumer);
 
             Console.WriteLine("Payment Consumer started. Press [enter] to exit.");
             Console.ReadLine();

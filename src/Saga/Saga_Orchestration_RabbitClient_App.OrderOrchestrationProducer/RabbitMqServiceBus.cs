@@ -28,6 +28,13 @@ namespace Saga_Orchestration_RabbitClient_App.OrderOrchestrationProducer
                 autoDelete: false,
                 arguments: null);
 
+            // Declare the fanout exchange
+            _channel.ExchangeDeclare(exchange: "order.cancelled.fanout.exchange",
+                type: ExchangeType.Fanout,
+                durable: true,
+                autoDelete: false,
+                arguments: null);
+
             var queueName = "order.process.queue";
             _channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false);
             _channel.QueueBind(queue: queueName, exchange: "orders.exchange", routingKey: "order.process");

@@ -1,12 +1,12 @@
 ﻿using RabbitMQ.Client.Events;
 
-namespace Saga_Orchestration_RabbitClient_App.StockConsumer
+namespace Saga_Orchestration_RabbitClient_App.DeliveryConsumer
 {
     public class DeliveryConsumer
     {
         private IConnection _connection;
         private IModel _channel;
-        const string OrderStockQueue = "order.Deliver.queue";
+        const string OrderQueue = "order.Deliver.queue";
         const string OrderStockBindingKey = "order.Deliver";
         const string OrderExchangeName = "orders.exchange";
         const string OrderProccessRoutingKey = "order.process";
@@ -28,8 +28,8 @@ namespace Saga_Orchestration_RabbitClient_App.StockConsumer
                 autoDelete: false,
                 arguments: null);
 
-            _channel.QueueDeclare(queue: OrderStockQueue, durable: false, exclusive: false, autoDelete: false);
-            _channel.QueueBind(queue: OrderStockQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
+            _channel.QueueDeclare(queue: OrderQueue, durable: false, exclusive: false, autoDelete: false);
+            _channel.QueueBind(queue: OrderQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
         }
 
         public void Run()
@@ -41,15 +41,15 @@ namespace Saga_Orchestration_RabbitClient_App.StockConsumer
                 var message = Encoding.UTF8.GetString(body);
                 var _message = JsonConvert.DeserializeObject<OrderEvent>(message);
 
-                Console.WriteLine($"Processing stock for OrderId: {_message.OrderId} | Type: {_message.Type}");
+                Console.WriteLine($"Processing Delivery for OrderId: {_message.OrderId} | Type: {_message.Type}");
 
                 //Operation done successfully
                 RespondWithDelivered(_message.OrderId);
             };
 
-            _channel.BasicConsume(queue: OrderStockQueue, autoAck: true, consumer: consumer);
+            _channel.BasicConsume(queue: OrderQueue, autoAck: true, consumer: consumer);
 
-            Console.WriteLine("Stock Consumer started. Press enter to exit.");
+            Console.WriteLine("Delivery Consumer started. Press enter to exit.");
             Console.ReadLine();
         }
 
