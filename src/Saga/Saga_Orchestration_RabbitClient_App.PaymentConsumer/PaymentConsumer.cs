@@ -25,15 +25,20 @@ namespace Saga_Orchestration_RabbitClient_App.PaymentConsumer
                 autoDelete: false,
                 arguments: null);
 
+    
+
+            _channel.QueueDeclare(queue: OrderQueue, durable: false, exclusive: false, autoDelete: false);
+            _channel.QueueBind(queue: OrderQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
+
+            OrderCancellationRabbitMqConfig();
+        }
+        private void OrderCancellationRabbitMqConfig()
+        {
             _channel.ExchangeDeclare(exchange: OrderCancelledExchangeName,
                 type: ExchangeType.Fanout,
                 durable: true,
                 autoDelete: false,
                 arguments: null);
-
-            _channel.QueueDeclare(queue: OrderQueue, durable: false, exclusive: false, autoDelete: false);
-            _channel.QueueBind(queue: OrderQueue, exchange: OrderExchangeName, routingKey: OrderStockBindingKey);
-
             //OrderCancelled
             OrderCancelledQueue = _channel.QueueDeclare().QueueName;
             //_channel.QueueDeclare(queue: OrderCancelledQueue, durable: false, exclusive: false, autoDelete: false);
