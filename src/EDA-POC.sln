@@ -163,6 +163,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitCl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga_Orchestration_RabbitClient_App.DeliveryConsumer", "Saga\Saga_Orchestration_RabbitClient_App.DeliveryConsumer\Saga_Orchestration_RabbitClient_App.DeliveryConsumer.csproj", "{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeliveryGuarantees", "DeliveryGuarantees", "{5CF427B1-ACDD-4925-A5C2-F88145D0D978}"
+	ProjectSection(SolutionItems) = preProject
+		DeliveryGuarantees\DeliveryGuaranteesExe.ps1 = DeliveryGuarantees\DeliveryGuaranteesExe.ps1
+		DeliveryGuarantees\Readme.md = DeliveryGuarantees\Readme.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutBoxApp.Producer", "DeliveryGuarantees\OutBoxApp.Producer\OutBoxApp.Producer.csproj", "{DDC51D5E-B6C7-4684-836A-5E336D7636FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InBoxApp.Consumer", "DeliveryGuarantees\InBoxApp.Consumer\InBoxApp.Consumer.csproj", "{7CFC011C-3F56-42E2-8714-8BCFC7F95717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeliveryGuarantees.Repository", "DeliveryGuarantees\DeliveryGuarantees.Repository\DeliveryGuarantees.Repository.csproj", "{239B4BC8-C912-4CD5-BF1F-162394BBE8C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -297,6 +309,18 @@ Global
 		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC51D5E-B6C7-4684-836A-5E336D7636FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC51D5E-B6C7-4684-836A-5E336D7636FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC51D5E-B6C7-4684-836A-5E336D7636FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC51D5E-B6C7-4684-836A-5E336D7636FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CFC011C-3F56-42E2-8714-8BCFC7F95717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CFC011C-3F56-42E2-8714-8BCFC7F95717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CFC011C-3F56-42E2-8714-8BCFC7F95717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CFC011C-3F56-42E2-8714-8BCFC7F95717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239B4BC8-C912-4CD5-BF1F-162394BBE8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239B4BC8-C912-4CD5-BF1F-162394BBE8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239B4BC8-C912-4CD5-BF1F-162394BBE8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239B4BC8-C912-4CD5-BF1F-162394BBE8C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -349,6 +373,10 @@ Global
 		{0383407D-A66A-4D26-AD49-FC89CDF2BE0E} = {A0DA3334-9E80-48D6-9419-FADF2559039B}
 		{B5070569-E72E-407B-8B33-E74A687D3416} = {A0DA3334-9E80-48D6-9419-FADF2559039B}
 		{D7189BBE-44F2-4C4C-B151-EF23FACBE0F3} = {A0DA3334-9E80-48D6-9419-FADF2559039B}
+		{5CF427B1-ACDD-4925-A5C2-F88145D0D978} = {123C5143-A147-46CD-A044-5A8544B6C2C1}
+		{DDC51D5E-B6C7-4684-836A-5E336D7636FA} = {5CF427B1-ACDD-4925-A5C2-F88145D0D978}
+		{7CFC011C-3F56-42E2-8714-8BCFC7F95717} = {5CF427B1-ACDD-4925-A5C2-F88145D0D978}
+		{239B4BC8-C912-4CD5-BF1F-162394BBE8C2} = {5CF427B1-ACDD-4925-A5C2-F88145D0D978}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3342FE6-1ABC-4764-8B32-3A7B8494D08E}

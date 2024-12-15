@@ -23,3 +23,7 @@ $f = "Saga"; $projectName = "Saga_Orchestration_RabbitClient_App.DeliveryConsume
 
 
 
+$f = "DeliveryGuarantees"; $projectName = "OutBoxApp.Producer"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+$f = "DeliveryGuarantees"; $projectName = "InBoxApp.Consumer"; if (!(Test-Path -Path $f)) { mkdir $f }; cd $f; dotnet new console -n $projectName -f net8.0; dotnet sln ..\EDA-POC.sln add ..\$f\$projectName\$projectName.csproj	; cd ..
+
+
