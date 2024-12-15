@@ -14,6 +14,6 @@
 		<PackageReference Include="RabbitMQ.Client" Version="6.2.3" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\EDA-Utilities\EDA-Utilities.csproj" />
+		<ProjectReference Include="..\..\Common\EDA-Utilities\EDA-Utilities.csproj" />
 	</ItemGroup>
 </Project>

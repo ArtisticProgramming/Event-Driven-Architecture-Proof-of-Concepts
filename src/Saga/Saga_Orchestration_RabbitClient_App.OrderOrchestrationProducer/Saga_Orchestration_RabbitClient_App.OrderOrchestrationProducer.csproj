@@ -11,6 +11,6 @@
 		<PackageReference Include="Stateless" Version="5.16.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\..\EDA-Utilities\EDA-Utilities.csproj" />
+		<ProjectReference Include="..\..\Common\EDA-Utilities\EDA-Utilities.csproj" />
 	</ItemGroup>
 </Project>
