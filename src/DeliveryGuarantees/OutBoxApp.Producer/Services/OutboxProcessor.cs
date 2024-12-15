@@ -12,13 +12,17 @@ namespace InBoxApp.Producer.Services
     {
         AppDbContext db { get; set; }
         public IModel channel { get; set; }
+        public string ExchangeName { get; set; }
 
         public OutboxProcessor(AppDbContext db)
         {
             this.db=db;
-           var factory = new ConnectionFactory() { HostName = "localhost" };
-           var connection = factory.CreateConnection();
-           channel = connection.CreateModel();
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var connection = factory.CreateConnection();
+            channel = connection.CreateModel();
+
+            ExchangeName = "DeliveryGuarantees_exchange";
+            channel.ExchangeDeclare(exchange: ExchangeName, type: ExchangeType.Direct);
         }
 
         public void Process()
@@ -32,13 +36,16 @@ namespace InBoxApp.Producer.Services
             {
                 var body = Encoding.UTF8.GetBytes(item.Payload);
 
-                channel.BasicPublish("", "", null, body);
+                var properties = channel.CreateBasicProperties();
+                properties.CorrelationId = Guid.NewGuid().ToString();  // Unique correlation ID
+                properties.Type =item.Type;  // Queue to reply to
+
+                channel.BasicPublish(ExchangeName, "delivery-guarantees", properties, body);
 
                 Console.WriteLine($"Message Processed: {item.Payload}");
                 item.ProcessedAt = DateTime.Now;
                 db.SaveChanges();
             }
         }
-
     }
 }

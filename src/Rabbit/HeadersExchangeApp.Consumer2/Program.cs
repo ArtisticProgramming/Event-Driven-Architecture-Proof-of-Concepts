@@ -21,11 +21,11 @@ class Program : BaseRabbitMq
             channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false);
 
             var bindingHeaders = new Dictionary<string, object>
-        {
-            { "priority", "Medium" },
-            { "type", "Warning" },
-            { "x-match", "all" }
-        };
+            {
+                { "priority", "Medium" },
+                { "type", "Warning" },
+                { "x-match", "all" }
+            };
             channel.QueueBind(queue: queueName, exchange: exchangeName, routingKey: "", arguments: bindingHeaders);
 
             var consumer = new EventingBasicConsumer(channel);

@@ -13,7 +13,7 @@ namespace DeliveryGuarantees.Repository
         public DbSet<InBoxMessage> InBoxMessages { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("DeliveryGuaranteesDb");
+            optionsBuilder.UseInMemoryDatabase("BoxDb");
         }
     }
 }

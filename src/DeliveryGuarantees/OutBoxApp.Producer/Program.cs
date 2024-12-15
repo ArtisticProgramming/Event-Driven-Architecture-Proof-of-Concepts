@@ -36,10 +36,10 @@ $$    $$/ $$    $$/   $$  $$/ $$    $$/ $$    $$/ /$$/ $$  |
                           new UserRegisteredEvent("Mostafa", "Jafari", new Random().Next(1, 120));
 
 
-                        outBoxService.AddMessage(type: typeof(UserRegisteredEvent).ToString(),
+                        outBoxService.AddMessage(type: nameof(UserRegisteredEvent).ToString(),
                            payload: JsonConvert.SerializeObject(userRegisteredEvent));
 
-                        Thread.Sleep(2000);
+                        Thread.Sleep(3000);
 
                         //If RabbitMq is not ready. Application proccessing messages
                         //and save in Db unitle Rabbitmq get ready.
