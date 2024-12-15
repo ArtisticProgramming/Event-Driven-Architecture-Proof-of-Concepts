@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Versioning", "Versioning", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoubleWriting", "DoubleWriting", "{1AC6DA81-0642-4DB5-BDD3-E938C0C380FA}"
 	ProjectSection(SolutionItems) = preProject
-		DoubleWritingAppExe.ps1 = DoubleWritingAppExe.ps1
+		Versioning\DoubleWritingAppExe.ps1 = Versioning\DoubleWritingAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{BB2C281F-B1B5-4D70-8EE6-A1253DD7A20A}"
@@ -37,9 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ex_Fanout[Pub Sub Pattern]"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeadLetter", "DeadLetter", "{6002B87D-0E10-4FE9-8AEF-643D62D1C2D8}"
 	ProjectSection(SolutionItems) = preProject
-		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
-		DeadLetterReadme.txt = DeadLetterReadme.txt
-		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
+		Deadetter\DeadLetterReadme.txt = Deadetter\DeadLetterReadme.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Producer", "Rabbit\DirectExchangeApp.Producer\DirectExchangeApp.Producer.csproj", "{8099C607-E92E-4F0C-91DB-8D6E9381D438}"
@@ -48,7 +46,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectExchangeApp.Consumer1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "negatively-acknowledged", "negatively-acknowledged", "{E1D569EF-6D26-478B-8A16-D05EB0C996FC}"
 	ProjectSection(SolutionItems) = preProject
-		DeadLetterNegativelyAcknowledgedAppExe.ps1 = DeadLetterNegativelyAcknowledgedAppExe.ps1
+		Deadetter\DeadLetterTTLExpirationAppExe.ps1 = Deadetter\DeadLetterTTLExpirationAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{C45777C9-6799-4D83-A091-44142CED3A3A}"
@@ -60,21 +58,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimeToLive[TTL]-Expiration", "TimeToLive[TTL]-Expiration", "{337B94A3-8EF6-4DAA-8DC6-119A9CA55753}"
 	ProjectSection(SolutionItems) = preProject
-		DeadLetterTTLExpirationAppExe.ps1 = DeadLetterTTLExpirationAppExe.ps1
+		Deadetter\DeadLetterNegativelyAcknowledgedAppExe.ps1 = Deadetter\DeadLetterNegativelyAcknowledgedAppExe.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CompetingConsumers", "CompetingConsumers", "{853FA7E4-C287-4479-9C18-5C63691CAD58}"
 	ProjectSection(SolutionItems) = preProject
-		CompetingConsumersExe.ps1 = CompetingConsumersExe.ps1
-		CompetingConsumersReadme.txt = CompetingConsumersReadme.txt
+		CompetingConsumers\CompetingConsumersExe.ps1 = CompetingConsumers\CompetingConsumersExe.ps1
+		CompetingConsumers\CompetingConsumersReadme.txt = CompetingConsumers\CompetingConsumersReadme.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{123C5143-A147-46CD-A044-5A8544B6C2C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnvelopeWrapper", "EnvelopeWrapper", "{D4E775FD-3246-4FF7-A265-F486177E17C2}"
 	ProjectSection(SolutionItems) = preProject
-		EnvelopeWapperAppExe.ps1 = EnvelopeWapperAppExe.ps1
-		EnvlopeWapperReadme.txt = EnvlopeWapperReadme.txt
+		EnvelopeWrapper\EnvelopeWapperAppExe.ps1 = EnvelopeWrapper\EnvelopeWapperAppExe.ps1
+		EnvelopeWrapper\EnvlopeWapperReadme.txt = EnvelopeWrapper\EnvlopeWapperReadme.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopicApp.Producer", "Rabbit\TopicApp.Producer\TopicApp.Producer.csproj", "{33C59ED6-DA4F-482B-9B02-5F9DEA4A6315}"

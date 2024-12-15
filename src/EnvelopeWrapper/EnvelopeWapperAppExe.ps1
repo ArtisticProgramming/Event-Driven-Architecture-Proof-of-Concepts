@@ -1,5 +1,5 @@
 $currentDir = (Get-Location).Path
-
+cd  $currentDir
 wt new-tab --title "Consumer1"  powershell.exe -Command "
 cd \"$currentDir\EnvelopeWrapper.Consumer1\";
 dotnet run" `;
