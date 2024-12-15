@@ -12,7 +12,7 @@ class Producer
         using (var channel = connection.CreateModel())
         {
          
-            channel.ExchangeDeclare(exchange: "direct_exchange", type: ExchangeType.Direct);
+            channel.ExchangeDeclare(exchange: "direct_exchange", type: ExchangeType.Direct,durable:true);
 
             while (true)
             {
