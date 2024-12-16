@@ -33,7 +33,7 @@ Messaging systems typically provide three main delivery guarantees:
 
 ## Outbox Pattern &  Inbox Pattern
 
-![Outbox, Inbox patterns](./img/In-OutBoxPattern.png)  
+![Outbox, Inbox patterns](../../img/In-OutBoxPattern.png)  
 
 To achieve reliable message delivery, particularly for at-least-once and exactly-once semantics, the following patterns are commonly used:
 
