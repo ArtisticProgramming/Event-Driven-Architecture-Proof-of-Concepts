@@ -1,8 +1,10 @@
-# Delivery Guarantees in Messaging
+# Outbox, Inbox patterns and delivery guarantees
+
+## Delivery Guarantees in Messaging
 
 Messaging systems typically provide three main delivery guarantees:
 
-## 1. At-Most Once
+### 1. At-Most Once
 - **Definition:** The simplest guarantee where a message may be delivered once or not at all.
 - **Behavior:** If a message fails during processing, it is lost and not handled. This can happen due to:
   - Transient errors (e.g., temporary database outage, network issues).
@@ -10,7 +12,7 @@ Messaging systems typically provide three main delivery guarantees:
 - **Advantages:** No need to handle idempotence, simplifying implementation.
 - **Disadvantages:** No guarantee of message delivery.
 
-## 2. At-Least Once
+### 2. At-Least Once
 - **Definition:** Ensures that a sent message will always be delivered, but it may be handled multiple times.
 - **Behavior:**
   - Messages may be re-published by the producer (e.g., using the Outbox Pattern).
@@ -20,7 +22,7 @@ Messaging systems typically provide three main delivery guarantees:
   - Without idempotency, repeated handling may lead to corrupted data.
 - **Example Issue:** An invoice is saved to the database, but a timeout occurs. Retrying without verifying if the invoice already exists may result in duplication.
 
-## 3. Exactly Once
+### 3. Exactly Once
 - **Definition:** Guarantees that a message will be delivered and processed exactly once.
 - **Challenges:**
   - Achieving this is complex and sometimes impossible due to potential failures at multiple stages of processing.
@@ -29,7 +31,9 @@ Messaging systems typically provide three main delivery guarantees:
 
 ---
 
-# Patterns for Handling At-Least-Once and Exactly-Once Delivery
+## Outbox Pattern &  Inbox Pattern
+
+![Outbox, Inbox patterns](img/In-OutBoxPattern.png)  
 
 To achieve reliable message delivery, particularly for at-least-once and exactly-once semantics, the following patterns are commonly used:
 
