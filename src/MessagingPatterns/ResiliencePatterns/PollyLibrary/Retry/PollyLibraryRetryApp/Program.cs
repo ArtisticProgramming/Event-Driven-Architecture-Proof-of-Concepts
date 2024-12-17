@@ -1,5 +1,4 @@
-﻿
-using Polly.Retry;
+﻿using Polly.Retry;
 using RabbitMQ.Client.Exceptions;
 using System.Net.Sockets;
 
@@ -16,15 +15,23 @@ public class Program
                    $"encountered an error: {exception.Message}. " +
                    $"Waiting {timeSpan} before next retry.");
            });
+
     public static void Main(string[] args)
     {
+        Console.WriteLine(@"
+ __   ___ ___  __      
+|__) |__   |  |__) \ / 
+|  \ |___  |  |  \  |  
+
+");
         _RetryPolicy.Execute(() =>
         {
+
             //Connecting to RabbitMq
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
-
+            Console.WriteLine("Hello!");
             Console.ReadLine();
         });
     }
