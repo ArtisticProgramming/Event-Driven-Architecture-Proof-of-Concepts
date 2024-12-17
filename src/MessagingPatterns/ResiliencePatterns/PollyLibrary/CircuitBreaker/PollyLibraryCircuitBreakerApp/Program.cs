@@ -38,19 +38,17 @@ public class Program
                     using var connection = factory.CreateConnection();
                     using var channel = connection.CreateModel();
 
-                    // Declare a queue
-                    channel.QueueDeclare(queue: "retry_queue",
+                    channel.QueueDeclare(queue: "circuit-breaker_queue",
                                          durable: true,
                                          exclusive: false,
                                          autoDelete: false,
                                          arguments: null);
 
-                    // Publish a message
-                    var message = "Hello, RabbitMQ!";
+                    var message = "Hello From Circuit-Breaker App!";
                     var body = Encoding.UTF8.GetBytes(message);
 
                     channel.BasicPublish(exchange: "",
-                                         routingKey: "retry_queue",
+                                         routingKey: "circuit-breaker_queue",
                                          basicProperties: null,
                                          body: body);
 
